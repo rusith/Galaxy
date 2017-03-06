@@ -1,4 +1,5 @@
-﻿using System.Linq;
+using System.Linq;
+using System.Text;
 
 namespace Galaxy.Extensions
 {
@@ -44,14 +45,14 @@ namespace Galaxy.Extensions
         }
 
         /// <summary>
-        /// surround the string with another string 
+        /// surround the string with another string using a string builder 
         /// </summary>
         /// <param name="str">string to use </param>
         /// <param name="text">string to add to start and end</param>
         /// <returns>result text</returns>
         public static string SurroundWith(this string str, string text)
         {
-            return text + str + text;
+            return new StringBuilder(text).Append(str).Append(text).ToString();
         }
     }
 }
